@@ -6,7 +6,7 @@ import br.edu.femass.model.Autor;
 public class App {
 
     public static void main(String[] args) {
-        Autor autor = new Autor("Carlos", "Jose", "Brasileiro");
+        Autor autor = new Autor("Naruto", "Uzumaki", "Japones");
         DaoAutor dao = new DaoAutor();
         try {
             dao.gravar(autor);
