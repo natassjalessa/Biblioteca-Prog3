@@ -12,6 +12,7 @@ import java.util.List;
 public class DaoAutor {
 
     private static List<Autor> autores = new ArrayList<Autor>();
+    //TESTE PRA SABER SE ESTA FUNCIONANDO
 
     public void gravar(Autor autor) throws Exception {
         //1 Adiciona objeto a lista
