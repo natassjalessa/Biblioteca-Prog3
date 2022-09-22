@@ -17,6 +17,7 @@ public class Leitor {
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
+        Professor professor = new Professor();
         this.prazoMaximoDevolucao = prazoMaximoDevolucao;
     }
 
@@ -60,9 +61,4 @@ public class Leitor {
         this.prazoMaximoDevolucao = prazoMaximoDevolucao;
     }
 
-    @Override
-    public String toString() {
-        return this.codigo + " " + this.nome;
-
-    }
 }

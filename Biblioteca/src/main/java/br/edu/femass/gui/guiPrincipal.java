@@ -3,21 +3,31 @@ package br.edu.femass.gui;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 
 public class guiPrincipal {
     private javax.swing.JPanel JPanel;
-    private JButton btnClicarAqui;
+    private JButton btnBibliotecario;
+    private JButton btnAtendente;
 
     public guiPrincipal() {
-        btnClicarAqui.addActionListener(new ActionListener() {
+        btnBibliotecario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //JOptionPane.showMessageDialog(null, "Cliquei");
-                guiLeitor guiLeitor = new guiLeitor();
+                GuiLeitor guiLeitor = new GuiLeitor();
                 JFrame frame = new JFrame("Segunda tela");
                 frame.setContentPane(guiLeitor.getJPanel());
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+        btnAtendente.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiLivro guiLivro = new GuiLivro();
+                JFrame frame = new JFrame("Segunda tela");
+                frame.setContentPane(guiLivro.getJPanel());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
