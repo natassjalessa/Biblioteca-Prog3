@@ -40,4 +40,9 @@ public class Autor {
         return sobreNome;
     }
 
+    @Override
+    public String toString() {
+        return this.nome + " " + this.sobreNome;
+    }
+
 }

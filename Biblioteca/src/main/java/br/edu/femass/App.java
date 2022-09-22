@@ -6,12 +6,16 @@ import br.edu.femass.model.Autor;
 public class App {
 
     public static void main(String[] args) {
-        Autor autor = new Autor("Naruto", "Uzumaki", "Japones");
-        DaoAutor dao = new DaoAutor();
+        gerarAutores();
+
+    }
+
+    public static void gerarAutores() {
+        Autor a = new Autor("Pablo", "Vitar", "Brasileira");
         try {
-            dao.gravar(autor);
+            new DaoAutor().save(a);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 }

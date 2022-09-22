@@ -2,45 +2,39 @@ package br.edu.femass.dao;
 
 import br.edu.femass.model.Autor;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DaoAutor {
+public class DaoAutor extends Persistencia<Autor> implements Dao<Autor> {
 
-    private static List<Autor> autores = new ArrayList<Autor>();
-    //TESTE PRA SABER SE ESTA FUNCIONANDO
+    private final static String NOMEARQUIVO = "autores.json";
 
-    public void gravar(Autor autor) throws Exception {
-        //1 Adiciona objeto a lista
+    public void save(Autor autor) throws Exception {
+        List<Autor> autores = getAll();
         autores.add(autor);
-
-        //2 Gera JSON
-        ObjectMapper objectMapper = new ObjectMapper();
-        String json = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(autores);
-
-        //3 Grava arquivo no disco
-        FileOutputStream out = new FileOutputStream("autor.json");
+        String json = getObjectmapper().writerWithDefaultPrettyPrinter().writeValueAsString(autores);
+        FileOutputStream out = new FileOutputStream(NOMEARQUIVO);
         out.write(json.getBytes());
         out.close();
     }
 
-    public List<Autor> getAutores() throws Exception {
-
-        //1 Ler arquivo
-        FileInputStream in = new FileInputStream("autor.json");
-        String json = new String (in.readAllBytes());
-
-        //2 Converter conteudo do arquivo em objeto
-        ObjectMapper objectMapper = new ObjectMapper();
-        autores = objectMapper.readValue(json, new TypeReference<List<Autor>>(){});
-
-        //3 Devolver a lista de objetos
-        return autores;
-
-
+    public List<Autor> getAll() throws Exception {
+        try {
+            FileInputStream in = new FileInputStream(NOMEARQUIVO);
+            String json = new String(in.readAllBytes());
+            List<Autor> autores = getObjectmapper().readValue(json, new TypeReference<List<Autor>>(){});
+            return autores;
+        } catch (FileNotFoundException f) {
+            return new ArrayList();
+        } catch (Exception e) {
+            throw e;
+        }
     }
 }
