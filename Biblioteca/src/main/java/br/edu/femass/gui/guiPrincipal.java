@@ -25,9 +25,9 @@ public class guiPrincipal {
         btnAtendente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                GuiLivro guiLivro = new GuiLivro();
-                JFrame frame = new JFrame("Segunda tela");
-                frame.setContentPane(guiLivro.getJPanel());
+                GuiLeitor guiLeitor = new GuiLeitor();
+                JFrame frame = new JFrame("Atendente");
+                frame.setContentPane(guiLeitor.getJPanel());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);

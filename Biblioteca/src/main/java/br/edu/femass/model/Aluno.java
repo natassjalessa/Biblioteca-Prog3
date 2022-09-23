@@ -12,6 +12,7 @@ public class Aluno extends Leitor {
                  String telefone, String matricula) {
         super(nome, endereco, telefone);
         this.matricula = matricula;
+        setPrazoMaximoDevolucao(15);
     }
 
     public String getMatricula() {
@@ -21,6 +22,5 @@ public class Aluno extends Leitor {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
-
 
 }

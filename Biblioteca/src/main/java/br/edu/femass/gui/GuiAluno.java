@@ -13,9 +13,9 @@ public class GuiAluno {
     private JFormattedTextField txtEnderecoAluno;
     private JFormattedTextField txtTelefoneAluno;
     private javax.swing.JPanel JPanel;
-    private JFormattedTextField txtDevolucaoAluno;
     private JFormattedTextField txtMatriculaAluno;
     private JButton btnRegistrarAluno;
+    private JList lstAluno;
 
     public JPanel getJPanel() { return JPanel; }
 
@@ -42,6 +42,7 @@ public class GuiAluno {
 
         try{
             List<Aluno> alunos = new DaoAluno().getAll();
+            guiAluno.lstAluno.setListData(alunos.toArray());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

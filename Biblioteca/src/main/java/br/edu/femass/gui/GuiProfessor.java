@@ -15,6 +15,11 @@ public class GuiProfessor {
     private JFormattedTextField txtTelefoneProfessor;
     private JFormattedTextField txtDisciplinaProfessor;
     private JButton btnRegistrarProfessor;
+    private JList lstProfessor;
+
+    public JPanel getJPanel() {
+        return JPanel;
+    }
 
     public GuiProfessor() {
         btnRegistrarProfessor.addActionListener(new ActionListener() {
@@ -39,6 +44,7 @@ public class GuiProfessor {
 
         try {
             List<Professor> professores = new DaoProfessor().getAll();
+            guiProfessor.lstProfessor.setListData(professores.toArray());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

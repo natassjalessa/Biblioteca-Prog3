@@ -17,7 +17,6 @@ public class Leitor {
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
-        //this.prazoMaximoDevolucao = prazoMaximoDevolucao;
         this.codigo = proximoCodigo;
         proximoCodigo++;
     }
@@ -61,13 +60,13 @@ public class Leitor {
     public void setPrazoMaximoDevolucao(Integer prazoMaximoDevolucao) {
         this.prazoMaximoDevolucao = prazoMaximoDevolucao;
     }
-    public String toString() {
-        return prazoMaximoDevolucao.toString();
-    }
-
     public boolean equals(Object obj) {
         Leitor leitor = (Leitor) obj;
         return this.prazoMaximoDevolucao.equals(leitor.getPrazoMaximoDevolucao());
+    }
+
+    public String toString() {
+        return "Nome: " + this.nome + " Entrega: " + this.prazoMaximoDevolucao + " dias.";
     }
 
 }

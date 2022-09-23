@@ -12,6 +12,7 @@ public class Professor extends Leitor {
                      String telefone, String disciplina) {
         super(nome, endereco, telefone);
         this.disciplina = disciplina;
+        setPrazoMaximoDevolucao(30);
     }
 
     public String getDisciplina() {
