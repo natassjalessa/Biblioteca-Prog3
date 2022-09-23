@@ -9,17 +9,15 @@ public class guiPrincipal {
     private JButton btnBibliotecario;
     private JButton btnAtendente;
 
+    public JPanel getJPanel() {
+        return JPanel;
+    }
+
     public guiPrincipal() {
         btnBibliotecario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //JOptionPane.showMessageDialog(null, "Cliquei");
-                GuiLeitor guiLeitor = new GuiLeitor();
-                JFrame frame = new JFrame("Segunda tela");
-                frame.setContentPane(guiLeitor.getJPanel());
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.pack();
-                frame.setVisible(true);
+
             }
         });
         btnAtendente.addActionListener(new ActionListener() {
@@ -35,14 +33,4 @@ public class guiPrincipal {
         });
     }
 
-    public static void main(String[] args) {
-        guiPrincipal guiPrincipal = new guiPrincipal();
-        JFrame frame = new JFrame("Tela Principal");
-        frame.setContentPane(guiPrincipal.JPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-
-
-    }
 }

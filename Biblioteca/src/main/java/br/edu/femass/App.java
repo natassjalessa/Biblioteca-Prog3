@@ -1,33 +1,20 @@
 package br.edu.femass;
 
-import br.edu.femass.dao.DaoAutor;
-import br.edu.femass.dao.DaoLeitor;
-import br.edu.femass.model.Autor;
-import br.edu.femass.model.Leitor;
+import br.edu.femass.gui.guiPrincipal;
+
+
+import javax.swing.*;
 
 public class App {
 
     public static void main(String[] args) {
-        //gerarProfessores();
+        guiPrincipal guiPrincipal = new guiPrincipal();
+        JFrame frame = new JFrame("Tela Principal");
+        frame.setContentPane(guiPrincipal.getJPanel());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
 
     }
 
-    /*public static void gerarAutores() {
-        Autor a = new Autor("Pablo", "Vitar", "Brasileira");
-        try {
-            new DaoAutor().save(a);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
-
-    /*public static void gerarProfessores() {
-        Leitor l = new Leitor(1234L, "Carlos", "Rua", "329923822", 30);
-        try {
-            new DaoLeitor().save(l);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }*/
 }
