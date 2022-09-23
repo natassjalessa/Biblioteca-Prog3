@@ -8,9 +8,9 @@ public class Aluno extends Leitor {
 
     }
 
-    public Aluno(Long codigo, String nome, String endereco,
-                 String telefone, Integer prazoMaximoDevolucao, String matricula) {
-        super(codigo, nome, endereco, telefone, prazoMaximoDevolucao);
+    public Aluno(String nome, String endereco,
+                 String telefone, String matricula) {
+        super(nome, endereco, telefone);
         this.matricula = matricula;
     }
 

@@ -3,6 +3,7 @@ package br.edu.femass.model;
 public class Leitor {
 
     private Long codigo;
+    private static Long proximoCodigo = 1L;
     private String nome;
     private String endereco;
     private String telefone;
@@ -12,13 +13,13 @@ public class Leitor {
 
     }
 
-    public Leitor(Long codigo, String nome, String endereco, String telefone, Integer prazoMaximoDevolucao) {
-        this.codigo = codigo;
+    public Leitor(String nome, String endereco, String telefone) {
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
-        Professor professor = new Professor();
-        this.prazoMaximoDevolucao = prazoMaximoDevolucao;
+        //this.prazoMaximoDevolucao = prazoMaximoDevolucao;
+        this.codigo = proximoCodigo;
+        proximoCodigo++;
     }
 
     public Long getCodigo() {
@@ -59,6 +60,14 @@ public class Leitor {
 
     public void setPrazoMaximoDevolucao(Integer prazoMaximoDevolucao) {
         this.prazoMaximoDevolucao = prazoMaximoDevolucao;
+    }
+    public String toString() {
+        return prazoMaximoDevolucao.toString();
+    }
+
+    public boolean equals(Object obj) {
+        Leitor leitor = (Leitor) obj;
+        return this.prazoMaximoDevolucao.equals(leitor.getPrazoMaximoDevolucao());
     }
 
 }

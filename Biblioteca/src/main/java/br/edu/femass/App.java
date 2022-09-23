@@ -8,7 +8,7 @@ import br.edu.femass.model.Leitor;
 public class App {
 
     public static void main(String[] args) {
-        gerarProfessores();
+        //gerarProfessores();
 
     }
 
@@ -21,7 +21,7 @@ public class App {
         }
     }*/
 
-    public static void gerarProfessores() {
+    /*public static void gerarProfessores() {
         Leitor l = new Leitor(1234L, "Carlos", "Rua", "329923822", 30);
         try {
             new DaoLeitor().save(l);
@@ -29,5 +29,5 @@ public class App {
             e.printStackTrace();
         }
 
-    }
+    }*/
 }

@@ -8,9 +8,9 @@ public class Professor extends Leitor {
 
     }
 
-    public Professor(Long codigo, String nome, String endereco,
-                     String telefone, Integer prazoMaximoDevolucao, String disciplina) {
-        super(codigo, nome, endereco, telefone, prazoMaximoDevolucao);
+    public Professor(String nome, String endereco,
+                     String telefone, String disciplina) {
+        super(nome, endereco, telefone);
         this.disciplina = disciplina;
     }
 
