@@ -1,0 +1,17 @@
+[ {
+  "nome" : "Testando",
+  "sobreNome" : "Testando",
+  "nacionalidade" : "Brasileiro"
+}, {
+  "nome" : "Lucas",
+  "sobreNome" : "Ribeiro",
+  "nacionalidade" : "Brasileiro"
+}, {
+  "nome" : "Lucas",
+  "sobreNome" : "Barbosa",
+  "nacionalidade" : "Tailandes"
+}, {
+  "nome" : "",
+  "sobreNome" : "",
+  "nacionalidade" : ""
+} ]

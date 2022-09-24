@@ -4,6 +4,9 @@ import br.edu.femass.dao.DaoAluno;
 import br.edu.femass.model.Aluno;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.text.MaskFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -20,6 +23,13 @@ public class GuiAluno {
     public JPanel getJPanel() { return JPanel; }
 
     public GuiAluno() {
+
+        try {
+            MaskFormatter mascara = new MaskFormatter("(##) #####-####");
+            mascara.install(txtTelefoneAluno);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         btnRegistrarAluno.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -27,28 +37,31 @@ public class GuiAluno {
                     Aluno aluno = new Aluno(txtNomeAluno.getText(), txtEnderecoAluno.getText(),
                             txtTelefoneAluno.getText(), txtMatriculaAluno.getText());
                     new DaoAluno().save(aluno);
+                    updateList();
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
             }
         });
+        lstAluno.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                Aluno aluno = (Aluno) lstAluno.getSelectedValue();
+                if (aluno==null) return;
+                txtNomeAluno.setText(aluno.getNome());
+                txtEnderecoAluno.setText(aluno.getEndereco());
+                txtTelefoneAluno.setText(aluno.getTelefone());
+                txtMatriculaAluno.setText(aluno.getMatricula());
+            }
+        });
     }
 
-    public static void main(String[] args) {
-        GuiAluno guiAluno = new GuiAluno();
-        JFrame frame = new JFrame();
-        frame.setContentPane(guiAluno.JPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        try{
+    private void updateList() {
+        try {
             List<Aluno> alunos = new DaoAluno().getAll();
-            guiAluno.lstAluno.setListData(alunos.toArray());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            lstAluno.setListData(alunos.toArray());
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
         }
-        frame.pack();
-
-        frame.setVisible(true);
-
     }
 }

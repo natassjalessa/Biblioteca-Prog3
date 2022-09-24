@@ -1,9 +1,13 @@
 package br.edu.femass.gui;
 
+import br.edu.femass.dao.DaoAluno;
 import br.edu.femass.dao.DaoProfessor;
+import br.edu.femass.model.Aluno;
 import br.edu.femass.model.Professor;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -29,27 +33,33 @@ public class GuiProfessor {
                     Professor professor = new Professor(txtNomeProfessor.getText(), txtEnderecoProfessor.getText(),
                             txtTelefoneProfessor.getText(), txtDisciplinaProfessor.getText());
                     new DaoProfessor().save(professor);
+                    updateList();
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
             }
         });
+
+        lstProfessor.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                Professor professor = (Professor) lstProfessor.getSelectedValue();
+                if (professor==null) return;
+                txtNomeProfessor.setText(professor.getNome());
+                txtEnderecoProfessor.setText(professor.getEndereco());
+                txtTelefoneProfessor.setText(professor.getTelefone());
+                txtDisciplinaProfessor.setText(professor.getDisciplina());
+            }
+        });
     }
 
-    public static void main(String[] args) {
-        GuiProfessor guiProfessor = new GuiProfessor();
-        JFrame frame = new JFrame();
-        frame.setContentPane(guiProfessor.JPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+    private void updateList() {
         try {
             List<Professor> professores = new DaoProfessor().getAll();
-            guiProfessor.lstProfessor.setListData(professores.toArray());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            lstProfessor.setListData(professores.toArray());
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
         }
-
-        frame.pack();
-        frame.setVisible(true);
     }
+
 }

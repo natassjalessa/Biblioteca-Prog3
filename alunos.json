@@ -1,0 +1,15 @@
+[ {
+  "codigo" : 1,
+  "nome" : "Natassja",
+  "endereco" : "Lessa",
+  "telefone" : "(22) 99111-1111",
+  "prazoMaximoDevolucao" : 15,
+  "matricula" : "39283923"
+}, {
+  "codigo" : 1,
+  "nome" : "Teste",
+  "endereco" : "Teste",
+  "telefone" : "(22) 22222-2222",
+  "prazoMaximoDevolucao" : 15,
+  "matricula" : "32039128312"
+} ]

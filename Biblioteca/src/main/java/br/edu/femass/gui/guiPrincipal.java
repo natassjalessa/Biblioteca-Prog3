@@ -17,7 +17,12 @@ public class guiPrincipal {
         btnBibliotecario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                GuiBibliotecario guiBibliotecario = new GuiBibliotecario();
+                JFrame frame = new JFrame("Bibliotecario");
+                frame.setContentPane(guiBibliotecario.getJPanel());
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
             }
         });
         btnAtendente.addActionListener(new ActionListener() {

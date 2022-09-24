@@ -1,0 +1,36 @@
+[ {
+  "codigo" : 1,
+  "nome" : "",
+  "endereco" : "",
+  "telefone" : "",
+  "prazoMaximoDevolucao" : 30,
+  "disciplina" : ""
+}, {
+  "codigo" : 1,
+  "nome" : "",
+  "endereco" : "",
+  "telefone" : "",
+  "prazoMaximoDevolucao" : 30,
+  "disciplina" : ""
+}, {
+  "codigo" : 2,
+  "nome" : "",
+  "endereco" : "",
+  "telefone" : "",
+  "prazoMaximoDevolucao" : 30,
+  "disciplina" : ""
+}, {
+  "codigo" : 1,
+  "nome" : "",
+  "endereco" : "",
+  "telefone" : "",
+  "prazoMaximoDevolucao" : 30,
+  "disciplina" : ""
+}, {
+  "codigo" : 1,
+  "nome" : "",
+  "endereco" : "",
+  "telefone" : "",
+  "prazoMaximoDevolucao" : 30,
+  "disciplina" : ""
+} ]

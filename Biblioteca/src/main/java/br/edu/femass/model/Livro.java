@@ -1,10 +1,16 @@
 package br.edu.femass.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Livro {
 
     //Mudei Codigo para String pq nao sei converter Long na caixa de texto
     private String codigo;
     private String titulo;
+
+    private List<Autor> autores = new ArrayList<>();
+
 
 
     public Livro(String codigo, String titulo) {

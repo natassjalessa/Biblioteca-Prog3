@@ -1,10 +1,14 @@
 package br.edu.femass.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Autor {
 
     private String nome;
     private String sobreNome;
     private String nacionalidade;
+
 
     public Autor() {
 
@@ -44,5 +48,6 @@ public class Autor {
     public String toString() {
         return this.nome + " " + this.sobreNome;
     }
+
 
 }
