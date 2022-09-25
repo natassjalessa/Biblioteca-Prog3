@@ -1,13 +1,13 @@
 package br.edu.femass.gui;
 
-import br.edu.femass.dao.DaoAluno;
 import br.edu.femass.dao.DaoAutor;
 import br.edu.femass.dao.DaoLivro;
-import br.edu.femass.model.Aluno;
 import br.edu.femass.model.Autor;
 import br.edu.femass.model.Livro;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -15,11 +15,11 @@ import java.awt.event.ItemListener;
 import java.util.List;
 
 public class GuiLivro {
-    private JFormattedTextField txtCodigoLivro;
     private javax.swing.JPanel JPanel;
     private JFormattedTextField txtTituloLivro;
     private JButton btnRegistrarLivro;
-    private JComboBox cboAutorLivro;
+    private JList lstAutorLivro;
+    private JComboBox cboLivros;
 
     public JPanel getJPanel() {
         return JPanel;
@@ -28,13 +28,14 @@ public class GuiLivro {
 
 
     public GuiLivro() {
+
+        updateList();
         btnRegistrarLivro.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Livro livro = new Livro(txtCodigoLivro.getText(), txtTituloLivro.getText());
+                    Livro livro = new Livro(txtTituloLivro.getText());
                     new DaoLivro().save(livro);
-                    updateCombo();
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
@@ -42,29 +43,27 @@ public class GuiLivro {
         });
 
 
-        cboAutorLivro.addItemListener(new ItemListener() {
+        lstAutorLivro.addListSelectionListener(new ListSelectionListener() {
             @Override
-            public void itemStateChanged(ItemEvent e) {
+            public void valueChanged(ListSelectionEvent ListSelectionEvent) {
                 try {
-                    List<Autor> autores = new DaoAutor().getAll();
-                    if (autores==null) return;
-                    GuiAutor guiAutor = new GuiAutor();
-                    guiAutor.getLstAutor().getSelectedValue();
-                } catch (Exception ex) {
-                    throw new RuntimeException(ex);
+                    Autor autor = (Autor) lstAutorLivro.getSelectedValue();
+                    if(autor==null) return;
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
                 }
+
             }
         });
+
     }
 
-    private void updateCombo() {
+    private void updateList() {
         try {
             List<Autor> autores = new DaoAutor().getAll();
-            for (Autor autor: autores) {
-                cboAutorLivro.addItem(autor);
-            }
-        } catch (Exception c) {
-            throw new RuntimeException(c);
+            lstAutorLivro.setListData(autores.toArray());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 }

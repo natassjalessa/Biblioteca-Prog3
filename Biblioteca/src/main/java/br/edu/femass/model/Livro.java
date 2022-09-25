@@ -5,24 +5,28 @@ import java.util.List;
 
 public class Livro {
 
-    //Mudei Codigo para String pq nao sei converter Long na caixa de texto
-    private String codigo;
+    private Long codigo;
+    private static Long proximoLivroCodigo = 1L;
     private String titulo;
 
-    private List<Autor> autores = new ArrayList<>();
+    private List<Autor> autores;
+
+    public Livro() {
+
+    }
 
 
-
-    public Livro(String codigo, String titulo) {
-        this.codigo = codigo;
+    public Livro(String titulo) {
+        this.codigo = proximoLivroCodigo;
+        proximoLivroCodigo++;
         this.titulo = titulo;
     }
 
-    public String getCodigo() {
+    public Long getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(Long codigo) {
         this.codigo = codigo;
     }
 
@@ -33,4 +37,10 @@ public class Livro {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
+    public String toString() {
+
+        return this.codigo + " " + this.titulo + " " + this.autores ;
+    }
+
 }
