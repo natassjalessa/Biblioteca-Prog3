@@ -15,12 +15,12 @@ public class Exemplar {
     private Long codigo;
     private static Long proximoNumero = 1L;
     private LocalDate dataAquisicao;
-    private List<Livro> livros;
+    private Livro livro;
 
-    public Exemplar(LocalDate dataAquisicao) {
+    public Exemplar(LocalDate dataAquisicao, Livro livro) {
         this.codigo = proximoNumero;
         proximoNumero++;
-        this.livros = new ArrayList<Livro>();
+        this.livro = livro;
         this.dataAquisicao = LocalDate.now(Clock.systemDefaultZone());
     }
 
@@ -44,9 +44,14 @@ public class Exemplar {
         this.dataAquisicao = dataAquisicao;
     }
 
+    public Livro getLivro() {
+        return livro;
+    }
+
     @Override
     public String toString() {
-        return dataAquisicao.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        return dataAquisicao.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) +
+                " " + getLivro();
     }
 
 }

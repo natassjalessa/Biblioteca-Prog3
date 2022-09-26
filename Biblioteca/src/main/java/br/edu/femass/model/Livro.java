@@ -8,18 +8,19 @@ public class Livro {
     private Long codigo;
     private static Long proximoLivroCodigo = 1L;
     private String titulo;
-
-    private List<Autor> autores;
+    private Autor autor;
 
     public Livro() {
 
     }
 
 
-    public Livro(String titulo) {
+    public Livro(String titulo, Autor autor) {
         this.codigo = proximoLivroCodigo;
         proximoLivroCodigo++;
         this.titulo = titulo;
+        this.autor = autor;
+
     }
 
     public Long getCodigo() {
@@ -38,9 +39,13 @@ public class Livro {
         this.titulo = titulo;
     }
 
+    public Autor getAutor() {
+        return autor;
+    }
+
     public String toString() {
 
-        return this.codigo + " " + this.titulo + " " + this.autores ;
+        return this.codigo + " " + this.titulo + " " + getAutor();
     }
 
 }

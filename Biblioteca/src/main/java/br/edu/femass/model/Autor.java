@@ -10,6 +10,7 @@ public class Autor {
     private String nacionalidade;
 
 
+
     public Autor() {
 
     }
