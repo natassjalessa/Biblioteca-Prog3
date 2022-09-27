@@ -8,6 +8,7 @@ import br.edu.femass.model.Professor;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.text.MaskFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -26,6 +27,13 @@ public class GuiProfessor {
     }
 
     public GuiProfessor() {
+
+        try {
+            MaskFormatter mascara = new MaskFormatter("(##)#####-####");
+            mascara.install(txtTelefoneProfessor);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         btnRegistrarProfessor.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -33,6 +41,7 @@ public class GuiProfessor {
                     Professor professor = new Professor(txtNomeProfessor.getText(), txtEnderecoProfessor.getText(),
                             txtTelefoneProfessor.getText(), txtDisciplinaProfessor.getText());
                     new DaoProfessor().save(professor);
+                    professor.atualizarCodigo();
                     updateList();
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());

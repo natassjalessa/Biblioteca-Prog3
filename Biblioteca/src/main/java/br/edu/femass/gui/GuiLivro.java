@@ -34,8 +34,12 @@ public class GuiLivro {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Livro livro = new Livro(txtTituloLivro.getText());
+                    Autor autor = (Autor) lstAutorLivro.getSelectedValue();
+                    Livro livro = new Livro(txtTituloLivro.getText(), autor);
+                    livro.atualizarCodigo();
                     new DaoLivro().save(livro);
+                    JOptionPane.showMessageDialog(null, "Cadastro do livro realizado");
+
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }

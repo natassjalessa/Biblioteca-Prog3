@@ -5,11 +5,23 @@ import java.time.LocalDate;
 public class Emprestimo {
 
     private LocalDate dataEmprestimo;
-    private LocalDate dataPrevistaDevolucao;
+    private LocalDate dataPrevistaDevolucao = null;
     private LocalDate dataDevolucao;
+    private Exemplar exemplar;
+    private Leitor leitor;
+    private Livro livro;
 
     public Emprestimo() {
 
+    }
+
+    public Emprestimo(LocalDate dataEmprestimo, LocalDate dataPrevistaDevolucao
+            , Exemplar exemplar, Leitor leitor, Livro livro) {
+        this.dataEmprestimo = LocalDate.now();
+        this.dataPrevistaDevolucao = LocalDate.now().plusDays(leitor.getPrazoMaximoDevolucao());
+        this.exemplar = exemplar;
+        this.leitor = leitor;
+        this.livro = livro;
     }
 
     public LocalDate getDataEmprestimo() {

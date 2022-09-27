@@ -25,7 +25,7 @@ public class GuiAluno {
     public GuiAluno() {
 
         try {
-            MaskFormatter mascara = new MaskFormatter("(##) #####-####");
+            MaskFormatter mascara = new MaskFormatter("(##)#####-####");
             mascara.install(txtTelefoneAluno);
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -37,6 +37,7 @@ public class GuiAluno {
                     Aluno aluno = new Aluno(txtNomeAluno.getText(), txtEnderecoAluno.getText(),
                             txtTelefoneAluno.getText(), txtMatriculaAluno.getText());
                     new DaoAluno().save(aluno);
+                    aluno.atualizarCodigo();
                     updateList();
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());

@@ -50,8 +50,7 @@ public class Exemplar {
 
     @Override
     public String toString() {
-        return dataAquisicao.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) +
-                " " + getLivro();
+        return dataAquisicao.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
 }

@@ -1,5 +1,10 @@
 package br.edu.femass.model;
 
+import br.edu.femass.dao.DaoLeitor;
+import br.edu.femass.dao.DaoLivro;
+
+import java.util.List;
+
 public class Leitor {
 
     private Long codigo;
@@ -7,7 +12,7 @@ public class Leitor {
     private String nome;
     private String endereco;
     private String telefone;
-    private Integer prazoMaximoDevolucao;
+    protected Integer prazoMaximoDevolucao;
 
     public Leitor() {
 

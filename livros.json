@@ -1,29 +1,25 @@
 [ {
   "codigo" : 1,
-  "titulo" : "Romaria",
-  "autor" : null
-}, {
-  "codigo" : 1,
-  "titulo" : "Romaria",
-  "autor" : null
-}, {
-  "codigo" : 1,
-  "titulo" : "Romaria 3",
+  "titulo" : "A volta dos que nao foram",
   "autor" : {
-    "nome" : null,
-    "sobreNome" : null,
-    "nacionalidade" : null
+    "nome" : "Maria",
+    "sobreNome" : "Joao",
+    "nacionalidade" : "Taiwan"
   }
 }, {
-  "codigo" : 1,
-  "titulo" : "Velozes e Furiosos",
+  "codigo" : 2,
+  "titulo" : "A trança do careca",
   "autor" : {
-    "nome" : null,
-    "sobreNome" : null,
-    "nacionalidade" : null
+    "nome" : "Carlos",
+    "sobreNome" : "Jose",
+    "nacionalidade" : "Chines"
   }
 }, {
-  "codigo" : 1,
-  "titulo" : "Fer",
-  "autor" : null
+  "codigo" : 3,
+  "titulo" : "Tempestade no copo de agua",
+  "autor" : {
+    "nome" : "Maria",
+    "sobreNome" : "Joao",
+    "nacionalidade" : "Taiwan"
+  }
 } ]

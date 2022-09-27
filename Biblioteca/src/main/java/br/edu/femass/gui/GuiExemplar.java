@@ -25,8 +25,10 @@ public class GuiExemplar {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Exemplar exemplar = new Exemplar(LocalDate.now(), new Livro());
+                    Livro livro = (Livro) lstLivroExemplar.getSelectedValue();
+                    Exemplar exemplar = new Exemplar(LocalDate.now(), livro);
                     new DaoExemplar().save(exemplar);
+                    JOptionPane.showMessageDialog(null, "Cadastro do livro realizado");
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
