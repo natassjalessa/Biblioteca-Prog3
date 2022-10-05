@@ -37,6 +37,17 @@ public class GuiLeitor {
                 frame.setVisible(true);
             }
         });
+        btnEmprestimo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiEmprestimo guiEmprestimo = new GuiEmprestimo();
+                JFrame frame = new JFrame("Emprestimo");
+                frame.setContentPane(guiEmprestimo.getJPanel());
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
     }
 
     public static void main(String[] args) {

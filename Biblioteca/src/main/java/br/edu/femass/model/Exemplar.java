@@ -13,7 +13,7 @@ import java.util.List;
 public class Exemplar {
 
     private Long codigo;
-    private static Long proximoNumero = 1L;
+    private static Long proximoNumero = 10L;
     private LocalDate dataAquisicao;
     private Livro livro;
 
@@ -48,9 +48,13 @@ public class Exemplar {
         return livro;
     }
 
+    public void setLivro(Livro livro) {
+        this.livro = livro;
+    }
+
     @Override
     public String toString() {
-        return dataAquisicao.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        return "Codigo: " + this.codigo + getLivro();
     }
 
 }

@@ -22,4 +22,12 @@
     "sobreNome" : "Joao",
     "nacionalidade" : "Taiwan"
   }
+}, {
+  "codigo" : 4,
+  "titulo" : "Novo Livro",
+  "autor" : {
+    "nome" : "Maria",
+    "sobreNome" : "Joao",
+    "nacionalidade" : "Taiwan"
+  }
 } ]
