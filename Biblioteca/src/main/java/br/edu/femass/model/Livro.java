@@ -2,6 +2,7 @@ package br.edu.femass.model;
 
 import br.edu.femass.dao.DaoLivro;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,8 @@ public class Livro {
     private static Long proximoLivroCodigo = 1L;
     private String titulo;
     private Autor autor;
+    private List<Exemplar> exemplares;
+
 
     public Livro() {
 
@@ -22,6 +25,7 @@ public class Livro {
         proximoLivroCodigo++;
         this.titulo = titulo;
         this.autor = autor;
+        this.exemplares = new ArrayList<Exemplar>();
 
     }
 
@@ -60,6 +64,12 @@ public class Livro {
     public Autor getAutor() {
         return autor;
     }
+
+    public void addExemplar() {
+        Exemplar exemplar = new Exemplar();
+        this.exemplares.add(exemplar);
+    }
+
 
     public String toString() {
 

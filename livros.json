@@ -5,7 +5,8 @@
     "nome" : "Maria",
     "sobreNome" : "Joao",
     "nacionalidade" : "Taiwan"
-  }
+  },
+  "listaExemplares" : [ ]
 }, {
   "codigo" : 2,
   "titulo" : "A trança do careca",
@@ -13,7 +14,8 @@
     "nome" : "Carlos",
     "sobreNome" : "Jose",
     "nacionalidade" : "Chines"
-  }
+  },
+  "listaExemplares" : [ ]
 }, {
   "codigo" : 3,
   "titulo" : "Tempestade no copo de agua",
@@ -21,7 +23,8 @@
     "nome" : "Maria",
     "sobreNome" : "Joao",
     "nacionalidade" : "Taiwan"
-  }
+  },
+  "listaExemplares" : [ ]
 }, {
   "codigo" : 4,
   "titulo" : "Novo Livro",
@@ -29,5 +32,42 @@
     "nome" : "Maria",
     "sobreNome" : "Joao",
     "nacionalidade" : "Taiwan"
-  }
+  },
+  "listaExemplares" : [ ]
+}, {
+  "codigo" : 5,
+  "titulo" : "Titulo Novo",
+  "autor" : {
+    "nome" : "Carlos",
+    "sobreNome" : "Jose",
+    "nacionalidade" : "Chines"
+  },
+  "listaExemplares" : [ ]
+}, {
+  "codigo" : 6,
+  "titulo" : "Titulo Velho",
+  "autor" : {
+    "nome" : "Joao",
+    "sobreNome" : "Carneiro",
+    "nacionalidade" : "Brasileiro"
+  },
+  "listaExemplares" : [ ]
+}, {
+  "codigo" : 7,
+  "titulo" : "Titulo Dois",
+  "autor" : {
+    "nome" : "Joao",
+    "sobreNome" : "Carneiro",
+    "nacionalidade" : "Brasileiro"
+  },
+  "listaExemplares" : [ ]
+}, {
+  "codigo" : 8,
+  "titulo" : "A trança do careca",
+  "autor" : {
+    "nome" : "Maria",
+    "sobreNome" : "Joao",
+    "nacionalidade" : "Taiwan"
+  },
+  "listaExemplares" : [ ]
 } ]
