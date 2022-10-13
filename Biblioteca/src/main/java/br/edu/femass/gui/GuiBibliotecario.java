@@ -30,7 +30,7 @@ public class GuiBibliotecario {
                 } else if (result == JOptionPane.NO_OPTION){
                     frame.setContentPane(guiAutor.getJPanel());
                 }
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
             }

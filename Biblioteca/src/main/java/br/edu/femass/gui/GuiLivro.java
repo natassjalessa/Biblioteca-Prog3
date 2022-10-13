@@ -19,7 +19,7 @@ public class GuiLivro {
     private JFormattedTextField txtTituloLivro;
     private JButton btnRegistrarLivro;
     private JList lstAutorLivro;
-    private JComboBox cboLivros;
+
 
     public JPanel getJPanel() {
         return JPanel;

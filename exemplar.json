@@ -106,4 +106,40 @@
       "nacionalidade" : "Taiwan"
     }
   }
+}, {
+  "codigo" : 10,
+  "dataAquisicao" : [ 2022, 10, 12 ],
+  "livro" : {
+    "codigo" : 6,
+    "titulo" : "Titulo Velho",
+    "autor" : {
+      "nome" : "Joao",
+      "sobreNome" : "Carneiro",
+      "nacionalidade" : "Brasileiro"
+    }
+  }
+}, {
+  "codigo" : 11,
+  "dataAquisicao" : [ 2022, 10, 12 ],
+  "livro" : {
+    "codigo" : 8,
+    "titulo" : "A trança do careca",
+    "autor" : {
+      "nome" : "Maria",
+      "sobreNome" : "Joao",
+      "nacionalidade" : "Taiwan"
+    }
+  }
+}, {
+  "codigo" : 12,
+  "dataAquisicao" : [ 2022, 10, 12 ],
+  "livro" : {
+    "codigo" : 8,
+    "titulo" : "A trança do careca",
+    "autor" : {
+      "nome" : "Maria",
+      "sobreNome" : "Joao",
+      "nacionalidade" : "Taiwan"
+    }
+  }
 } ]

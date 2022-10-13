@@ -21,7 +21,7 @@ public class GuiLeitor {
                 GuiProfessor guiProfessor = new GuiProfessor();
                 JFrame frame = new JFrame("Professor");
                 frame.setContentPane(guiProfessor.getJPanel());
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
             }
@@ -32,7 +32,7 @@ public class GuiLeitor {
                 GuiAluno guiAluno = new GuiAluno();
                 JFrame frame = new JFrame("Aluno");
                 frame.setContentPane(guiAluno.getJPanel());
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
             }

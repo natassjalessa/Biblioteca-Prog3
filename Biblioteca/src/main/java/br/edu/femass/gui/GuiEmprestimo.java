@@ -18,6 +18,8 @@ public class GuiEmprestimo {
     private JComboBox cboExemplarEmprestimo;
     private JButton btnConfirmarEmprestimo;
     private javax.swing.JPanel JPanel;
+    private JButton btnCadastroAluno;
+    private JButton btnCadastroProfesor;
     private JList lstEmprestimoExemplar;
 
     public JPanel getJPanel() {
@@ -27,36 +29,39 @@ public class GuiEmprestimo {
     public GuiEmprestimo() {
 
         updateCombo();
-
-        btnConfirmarEmprestimo.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
+        //updateList();
 
         cboExemplarEmprestimo.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent itemEvent) {
-                Livro livro = (Livro) cboExemplarEmprestimo.getSelectedItem();
-                if (livro==null) return;
+                    Exemplar exemplar = (Exemplar) cboExemplarEmprestimo.getSelectedItem();
+                    if (exemplar==null) return;
             }
         });
-        lstEmprestimoExemplar.addListSelectionListener(new ListSelectionListener() {
+        /*lstEmprestimoExemplar.addListSelectionListener(new ListSelectionListener() {
             @Override
-            public void valueChanged(ListSelectionEvent e) {
-                Livro livro = (Livro) lstEmprestimoExemplar.getSelectedValue();
+            public void valueChanged(ListSelectionEvent listSelectionEvent) {
+                Exemplar exemplar = (Exemplar) lstEmprestimoExemplar.getSelectedValue();
+                if (exemplar==null) return;
 
             }
-        });
+        });*/
     }
+
+    /*private void updateList() {
+        try {
+            List<Exemplar> exemplares = new DaoExemplar().getAll();
+            lstEmprestimoExemplar.setListData(exemplares.toArray());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }*/
 
     private void updateCombo() {
         try {
-            List<Livro> livros = new DaoLivro().getAll();
-            for (Livro livro: livros) {
-                cboExemplarEmprestimo.addItem(livro);
+            List<Exemplar> exemplares = new DaoExemplar().getAll();
+            for (Exemplar exemplar: exemplares) {
+                cboExemplarEmprestimo.addItem(exemplar);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
