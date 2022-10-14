@@ -2,7 +2,9 @@ package br.edu.femass.gui;
 
 import br.edu.femass.dao.DaoExemplar;
 import br.edu.femass.dao.DaoLivro;
+import br.edu.femass.model.Emprestimo;
 import br.edu.femass.model.Exemplar;
+import br.edu.femass.model.Leitor;
 import br.edu.femass.model.Livro;
 
 import javax.swing.*;
@@ -16,11 +18,10 @@ import java.util.List;
 
 public class GuiEmprestimo {
     private JComboBox cboExemplarEmprestimo;
-    private JButton btnConfirmarEmprestimo;
     private javax.swing.JPanel JPanel;
     private JButton btnCadastroAluno;
     private JButton btnCadastroProfesor;
-    private JList lstEmprestimoExemplar;
+    public JComboBox comboAluno;
 
     public JPanel getJPanel() {
         return JPanel;
@@ -29,7 +30,19 @@ public class GuiEmprestimo {
     public GuiEmprestimo() {
 
         updateCombo();
-        //updateList();
+
+        btnCadastroAluno.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    Emprestimo emprestimo = new Emprestimo((Leitor) comboAluno.getSelectedItem(),
+                            (Exemplar) cboExemplarEmprestimo.getSelectedItem());
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+
+            }
+        });
 
         cboExemplarEmprestimo.addItemListener(new ItemListener() {
             @Override
@@ -38,24 +51,8 @@ public class GuiEmprestimo {
                     if (exemplar==null) return;
             }
         });
-        /*lstEmprestimoExemplar.addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent listSelectionEvent) {
-                Exemplar exemplar = (Exemplar) lstEmprestimoExemplar.getSelectedValue();
-                if (exemplar==null) return;
 
-            }
-        });*/
     }
-
-    /*private void updateList() {
-        try {
-            List<Exemplar> exemplares = new DaoExemplar().getAll();
-            lstEmprestimoExemplar.setListData(exemplares.toArray());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }*/
 
     private void updateCombo() {
         try {

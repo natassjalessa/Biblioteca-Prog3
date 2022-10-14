@@ -21,7 +21,7 @@ public class Emprestimo {
         this.dataPrevistaDevolucao = LocalDate.now().plusDays(leitor.getPrazoMaximoDevolucao());
         this.exemplar = exemplar;
         this.leitor = leitor;
-        this.livro = exemplar.getLivro();
+        //this.livro = exemplar.getLivro();
     }
 
     public LocalDate getDataEmprestimo() {
