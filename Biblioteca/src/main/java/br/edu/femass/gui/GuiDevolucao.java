@@ -1,7 +1,6 @@
 package br.edu.femass.gui;
 
 import br.edu.femass.dao.DaoEmprestimo;
-import br.edu.femass.dao.DaoExemplar;
 import br.edu.femass.model.Emprestimo;
 
 import javax.swing.*;
@@ -13,19 +12,14 @@ public class GuiDevolucao {
     private JList lstDevolucaoEmprestimo;
     private javax.swing.JPanel JPanel;
 
-    public JPanel getJPanel() {
-        return JPanel;
-    }
-
     public GuiDevolucao() {
 
         updateList();
-
         lstDevolucaoEmprestimo.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 Emprestimo emprestimo = (Emprestimo) lstDevolucaoEmprestimo.getSelectedValue();
-                if (emprestimo == null) return;
+                if (emprestimo==null) return;
             }
         });
     }
@@ -38,6 +32,8 @@ public class GuiDevolucao {
             throw new RuntimeException(e);
         }
     }
+
+    public JPanel getJPanel() {
+        return JPanel;
+    }
 }
-
-

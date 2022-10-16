@@ -76,4 +76,55 @@
       }
     }
   }
+}, {
+  "dataEmprestimo" : [ 2022, 10, 16 ],
+  "dataPrevistaDevolucao" : [ 2022, 10, 31 ],
+  "dataDevolucao" : null,
+  "exemplar" : {
+    "codigo" : 11,
+    "dataAquisicao" : [ 2022, 10, 5 ],
+    "livro" : {
+      "codigo" : 1,
+      "titulo" : "A volta dos que nao foram",
+      "autor" : {
+        "nome" : "Maria",
+        "sobreNome" : "Joao",
+        "nacionalidade" : "Taiwan"
+      }
+    }
+  }
+}, {
+  "dataEmprestimo" : [ 2022, 10, 16 ],
+  "dataPrevistaDevolucao" : [ 2022, 11, 15 ],
+  "dataDevolucao" : null,
+  "exemplar" : {
+    "codigo" : 10,
+    "dataAquisicao" : [ 2022, 10, 16 ],
+    "livro" : {
+      "codigo" : 9,
+      "titulo" : "Conto Russo",
+      "autor" : {
+        "nome" : "Joao",
+        "sobreNome" : "Carneiro",
+        "nacionalidade" : "Brasileiro"
+      }
+    }
+  }
+}, {
+  "dataEmprestimo" : [ 2022, 10, 16 ],
+  "dataPrevistaDevolucao" : [ 2022, 11, 15 ],
+  "dataDevolucao" : null,
+  "exemplar" : {
+    "codigo" : 11,
+    "dataAquisicao" : [ 2022, 10, 11 ],
+    "livro" : {
+      "codigo" : 6,
+      "titulo" : "Titulo Velho",
+      "autor" : {
+        "nome" : "Joao",
+        "sobreNome" : "Carneiro",
+        "nacionalidade" : "Brasileiro"
+      }
+    }
+  }
 } ]

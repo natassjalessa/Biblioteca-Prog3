@@ -51,9 +51,9 @@ public class GuiLeitor {
         });
         btnDevolucao.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent ActionEvent) {
                 GuiDevolucao guiDevolucao = new GuiDevolucao();
-                JFrame frame = new JFrame("Devolução");
+                JFrame frame = new JFrame("Devolucao");
                 frame.setContentPane(guiDevolucao.getJPanel());
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.pack();
@@ -62,15 +62,6 @@ public class GuiLeitor {
         });
     }
 
-    public static void main(String[] args) {
-        GuiLeitor guiLeitor = new GuiLeitor();
-        JFrame frame = new JFrame("Atendente"); //verificar
-        frame.setContentPane(guiLeitor.JPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-
-    }
 
     public JPanel getJPanel() {
         return JPanel;

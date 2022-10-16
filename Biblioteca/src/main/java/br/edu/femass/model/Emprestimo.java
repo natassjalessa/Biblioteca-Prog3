@@ -10,6 +10,7 @@ public class Emprestimo {
     private Exemplar exemplar;
     private Leitor leitor;
     private Livro livro;
+    private String testeEmprestimo;
     private Exemplar nomeEmprestimo;
 
 
@@ -52,10 +53,9 @@ public class Emprestimo {
         this.dataDevolucao = dataDevolucao;
     }
 
+
     @Override
     public String toString() {
-        return "Nome Livro: " + exemplar.getLivro().toString() +
-                " " +
-                "Data Devolucao: " + getDataPrevistaDevolucao().toString();
+        return  this.getExemplar() + " | Data Devolucao: " + this.getDataPrevistaDevolucao().toString();
     }
 }
