@@ -10,18 +10,22 @@ public class Emprestimo {
     private Exemplar exemplar;
     private Leitor leitor;
     private Livro livro;
+    private Exemplar nomeEmprestimo;
+
 
     public Emprestimo() {
 
     }
 
-    public Emprestimo(LocalDate dataEmprestimo, LocalDate dataPrevistaDevolucao
-            , Exemplar exemplar, Leitor leitor, Livro livro) {
+    public Emprestimo(Exemplar exemplar, Leitor leitor) {
         this.dataEmprestimo = LocalDate.now();
         this.dataPrevistaDevolucao = LocalDate.now().plusDays(leitor.getPrazoMaximoDevolucao());
         this.exemplar = exemplar;
-        this.leitor = leitor;
-        //this.livro = exemplar.getLivro();
+        this.nomeEmprestimo = this.getExemplar();
+    }
+
+    public Exemplar getExemplar() {
+        return exemplar;
     }
 
     public LocalDate getDataEmprestimo() {
@@ -48,5 +52,10 @@ public class Emprestimo {
         this.dataDevolucao = dataDevolucao;
     }
 
-
+    @Override
+    public String toString() {
+        return "Nome Livro: " + exemplar.getLivro().toString() +
+                " " +
+                "Data Devolucao: " + getDataPrevistaDevolucao().toString();
+    }
 }

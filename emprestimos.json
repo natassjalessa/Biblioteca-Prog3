@@ -1,0 +1,79 @@
+[ {
+  "dataEmprestimo" : [ 2022, 10, 15 ],
+  "dataPrevistaDevolucao" : [ 2022, 10, 30 ],
+  "dataDevolucao" : null,
+  "exemplar" : null
+}, {
+  "dataEmprestimo" : [ 2022, 10, 15 ],
+  "dataPrevistaDevolucao" : [ 2022, 11, 14 ],
+  "dataDevolucao" : null,
+  "exemplar" : null
+}, {
+  "dataEmprestimo" : [ 2022, 10, 15 ],
+  "dataPrevistaDevolucao" : [ 2022, 11, 14 ],
+  "dataDevolucao" : null,
+  "exemplar" : {
+    "codigo" : 10,
+    "dataAquisicao" : [ 2022, 10, 11 ],
+    "livro" : {
+      "codigo" : 5,
+      "titulo" : "Titulo Novo",
+      "autor" : {
+        "nome" : "Carlos",
+        "sobreNome" : "Jose",
+        "nacionalidade" : "Chines"
+      }
+    }
+  }
+}, {
+  "dataEmprestimo" : [ 2022, 10, 15 ],
+  "dataPrevistaDevolucao" : [ 2022, 11, 14 ],
+  "dataDevolucao" : null,
+  "exemplar" : {
+    "codigo" : 11,
+    "dataAquisicao" : [ 2022, 10, 11 ],
+    "livro" : {
+      "codigo" : 6,
+      "titulo" : "Titulo Velho",
+      "autor" : {
+        "nome" : "Joao",
+        "sobreNome" : "Carneiro",
+        "nacionalidade" : "Brasileiro"
+      }
+    }
+  }
+}, {
+  "dataEmprestimo" : [ 2022, 10, 15 ],
+  "dataPrevistaDevolucao" : [ 2022, 11, 14 ],
+  "dataDevolucao" : null,
+  "exemplar" : {
+    "codigo" : 10,
+    "dataAquisicao" : [ 2022, 10, 5 ],
+    "livro" : {
+      "codigo" : 4,
+      "titulo" : "Novo Livro",
+      "autor" : {
+        "nome" : "Maria",
+        "sobreNome" : "Joao",
+        "nacionalidade" : "Taiwan"
+      }
+    }
+  }
+}, {
+  "dataEmprestimo" : [ 2022, 10, 15 ],
+  "dataPrevistaDevolucao" : [ 2022, 10, 30 ],
+  "dataDevolucao" : null,
+  "exemplar" : {
+    "codigo" : 12,
+    "dataAquisicao" : [ 2022, 10, 5 ],
+    "livro" : {
+      "codigo" : 6,
+      "titulo" : "Titulo Velho",
+      "autor" : {
+        "nome" : "Joao",
+        "sobreNome" : "Carneiro",
+        "nacionalidade" : "Brasileiro"
+      }
+    }
+  }
+} ]

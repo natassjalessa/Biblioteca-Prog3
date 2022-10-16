@@ -12,7 +12,6 @@ public class Livro {
     private static Long proximoLivroCodigo = 1L;
     private String titulo;
     private Autor autor;
-    private List<Exemplar> exemplares;
 
 
     public Livro() {
@@ -25,7 +24,6 @@ public class Livro {
         proximoLivroCodigo++;
         this.titulo = titulo;
         this.autor = autor;
-        this.exemplares = new ArrayList<Exemplar>();
 
     }
 
@@ -65,15 +63,9 @@ public class Livro {
         return autor;
     }
 
-    public void addExemplar() {
-        Exemplar exemplar = new Exemplar();
-        this.exemplares.add(exemplar);
-    }
-
-
     public String toString() {
 
-        return this.codigo + " " + this.titulo + " " + getAutor();
+        return this.titulo + " " + getAutor();
     }
 
 }

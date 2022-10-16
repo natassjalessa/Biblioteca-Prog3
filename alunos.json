@@ -12,4 +12,18 @@
   "telefone" : "(22)22222-2222",
   "prazoMaximoDevolucao" : 15,
   "matricula" : "3224"
+}, {
+  "codigo" : 1,
+  "nome" : "Joao",
+  "endereco" : "Fernando",
+  "telefone" : "(22)22222-2222",
+  "prazoMaximoDevolucao" : 15,
+  "matricula" : "329381293"
+}, {
+  "codigo" : 1,
+  "nome" : "Caio",
+  "endereco" : "Lucas",
+  "telefone" : "(22)22222-2222",
+  "prazoMaximoDevolucao" : 15,
+  "matricula" : "4320492309432"
 } ]

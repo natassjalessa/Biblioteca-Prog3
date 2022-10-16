@@ -17,7 +17,6 @@ public class Exemplar {
     private LocalDate dataAquisicao;
     private Livro livro;
 
-    private List<Exemplar> listaExemplares = new ArrayList<>();
 
     public Exemplar(LocalDate dataAquisicao, Livro livro) {
         this.codigo = proximoNumero;

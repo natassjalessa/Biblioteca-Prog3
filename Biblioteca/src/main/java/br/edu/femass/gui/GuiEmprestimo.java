@@ -1,27 +1,24 @@
 package br.edu.femass.gui;
 
+import br.edu.femass.dao.DaoAluno;
+import br.edu.femass.dao.DaoEmprestimo;
 import br.edu.femass.dao.DaoExemplar;
-import br.edu.femass.dao.DaoLivro;
-import br.edu.femass.model.Emprestimo;
-import br.edu.femass.model.Exemplar;
-import br.edu.femass.model.Leitor;
-import br.edu.femass.model.Livro;
+import br.edu.femass.dao.DaoProfessor;
+import br.edu.femass.model.*;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GuiEmprestimo {
-    private JComboBox cboExemplarEmprestimo;
     private javax.swing.JPanel JPanel;
-    private JButton btnCadastroAluno;
-    private JButton btnCadastroProfesor;
-    public JComboBox comboAluno;
+    private JList lstEmprestimo;
+    private JList lstLeitorEmprestimo;
+    private JButton btnRegistarEmprestimo;
 
     public JPanel getJPanel() {
         return JPanel;
@@ -29,37 +26,48 @@ public class GuiEmprestimo {
 
     public GuiEmprestimo() {
 
-        updateCombo();
+        updateList();
 
-        btnCadastroAluno.addActionListener(new ActionListener() {
+        btnRegistarEmprestimo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try{
-                    Emprestimo emprestimo = new Emprestimo((Leitor) comboAluno.getSelectedItem(),
-                            (Exemplar) cboExemplarEmprestimo.getSelectedItem());
+                try {
+                    Exemplar exemplar = (Exemplar) lstEmprestimo.getSelectedValue();
+                    Leitor leitor = (Leitor) lstLeitorEmprestimo.getSelectedValue();
+                    Emprestimo emprestimo = new Emprestimo(exemplar, leitor);
+                    new DaoEmprestimo().save(emprestimo);
+                    JOptionPane.showMessageDialog(null, "Emprestimo feito");
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                    throw new RuntimeException(ex);
                 }
-
             }
         });
-
-        cboExemplarEmprestimo.addItemListener(new ItemListener() {
+        lstEmprestimo.addListSelectionListener(new ListSelectionListener() {
             @Override
-            public void itemStateChanged(ItemEvent itemEvent) {
-                    Exemplar exemplar = (Exemplar) cboExemplarEmprestimo.getSelectedItem();
-                    if (exemplar==null) return;
+            public void valueChanged(ListSelectionEvent e) {
+                Exemplar exemplar = (Exemplar) lstEmprestimo.getSelectedValue();
+                if (exemplar==null) return;
             }
         });
-
+        lstLeitorEmprestimo.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                Leitor leitor = (Leitor) lstLeitorEmprestimo.getSelectedValue();
+                if (leitor==null) return;
+            }
+        });
     }
 
-    private void updateCombo() {
+    private void updateList() {
         try {
             List<Exemplar> exemplares = new DaoExemplar().getAll();
-            for (Exemplar exemplar: exemplares) {
-                cboExemplarEmprestimo.addItem(exemplar);
-            }
+            List<Aluno> alunos = new DaoAluno().getAll();
+            List<Professor> professores = new DaoProfessor().getAll();
+            List<Leitor> leitores = new ArrayList<>();
+            leitores.addAll(alunos);
+            leitores.addAll(professores);
+            this.lstEmprestimo.setListData(exemplares.toArray());
+            this.lstLeitorEmprestimo.setListData(leitores.toArray());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

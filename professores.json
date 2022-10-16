@@ -12,4 +12,18 @@
   "telefone" : "(22)22222-2222",
   "prazoMaximoDevolucao" : 30,
   "disciplina" : "Filosofia"
+}, {
+  "codigo" : 1,
+  "nome" : "Lucas",
+  "endereco" : "Barbosa",
+  "telefone" : "(22)22222-2222",
+  "prazoMaximoDevolucao" : 30,
+  "disciplina" : "Matematica"
+}, {
+  "codigo" : 1,
+  "nome" : "Joana",
+  "endereco" : "Fernanda",
+  "telefone" : "(22)22222-2222",
+  "prazoMaximoDevolucao" : 30,
+  "disciplina" : "Filosofia"
 } ]

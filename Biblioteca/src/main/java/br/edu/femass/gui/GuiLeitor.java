@@ -9,6 +9,7 @@ public class GuiLeitor {
     private JButton btnCadastroProfessor;
     private JButton btnCadastroAluno;
     private JButton btnEmprestimo;
+    private JButton btnDevolucao;
 
     public JPanel getjPanel() {
         return JPanel;
@@ -43,6 +44,17 @@ public class GuiLeitor {
                 GuiEmprestimo guiEmprestimo = new GuiEmprestimo();
                 JFrame frame = new JFrame("Emprestimo");
                 frame.setContentPane(guiEmprestimo.getJPanel());
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+        btnDevolucao.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiDevolucao guiDevolucao = new GuiDevolucao();
+                JFrame frame = new JFrame("Devolução");
+                frame.setContentPane(guiDevolucao.getJPanel());
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
