@@ -26,4 +26,11 @@
   "telefone" : "(22)22222-2222",
   "prazoMaximoDevolucao" : 30,
   "disciplina" : "Filosofia"
+}, {
+  "codigo" : 1,
+  "nome" : "Fernando",
+  "endereco" : "Abreu",
+  "telefone" : "(22)22222-2222",
+  "prazoMaximoDevolucao" : 30,
+  "disciplina" : "Matematica"
 } ]

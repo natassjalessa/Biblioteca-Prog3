@@ -154,4 +154,16 @@
       "nacionalidade" : "Brasileiro"
     }
   }
+}, {
+  "codigo" : 10,
+  "dataAquisicao" : [ 2022, 10, 18 ],
+  "livro" : {
+    "codigo" : 8,
+    "titulo" : "A trança do careca",
+    "autor" : {
+      "nome" : "Maria",
+      "sobreNome" : "Joao",
+      "nacionalidade" : "Taiwan"
+    }
+  }
 } ]

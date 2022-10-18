@@ -1,7 +1,7 @@
 [ {
   "dataEmprestimo" : [ 2022, 10, 15 ],
-  "dataPrevistaDevolucao" : [ 2022, 10, 30 ],
-  "dataDevolucao" : null,
+  "dataPrevistaDevolucao" : [ 2022, 10, 10 ],
+  "dataDevolucao" : [ 2022, 11, 10 ],
   "exemplar" : null
 }, {
   "dataEmprestimo" : [ 2022, 10, 15 ],
@@ -11,7 +11,7 @@
 }, {
   "dataEmprestimo" : [ 2022, 10, 15 ],
   "dataPrevistaDevolucao" : [ 2022, 11, 14 ],
-  "dataDevolucao" : null,
+  "dataDevolucao" : [ 2022, 11, 15 ],
   "exemplar" : {
     "codigo" : 10,
     "dataAquisicao" : [ 2022, 10, 11 ],
@@ -120,6 +120,23 @@
     "livro" : {
       "codigo" : 6,
       "titulo" : "Titulo Velho",
+      "autor" : {
+        "nome" : "Joao",
+        "sobreNome" : "Carneiro",
+        "nacionalidade" : "Brasileiro"
+      }
+    }
+  }
+}, {
+  "dataEmprestimo" : [ 2022, 10, 18 ],
+  "dataPrevistaDevolucao" : [ 2022, 11, 17 ],
+  "dataDevolucao" : null,
+  "exemplar" : {
+    "codigo" : 10,
+    "dataAquisicao" : [ 2022, 10, 16 ],
+    "livro" : {
+      "codigo" : 9,
+      "titulo" : "Conto Russo",
       "autor" : {
         "nome" : "Joao",
         "sobreNome" : "Carneiro",

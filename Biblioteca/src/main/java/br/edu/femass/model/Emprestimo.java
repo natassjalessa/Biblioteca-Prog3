@@ -1,18 +1,25 @@
 package br.edu.femass.model;
 
+import br.edu.femass.dao.DaoEmprestimo;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+
 
 public class Emprestimo {
 
     private LocalDate dataEmprestimo;
     private LocalDate dataPrevistaDevolucao = null;
-    private LocalDate dataDevolucao;
+    private LocalDate dataDevolucao = null;
     private Exemplar exemplar;
     private Leitor leitor;
     private Livro livro;
     private String testeEmprestimo;
     private Exemplar nomeEmprestimo;
 
+    List<Emprestimo> listaEmprestimo = new ArrayList<>();
 
     public Emprestimo() {
 
@@ -52,7 +59,6 @@ public class Emprestimo {
     public void setDataDevolucao(LocalDate dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
-
 
     @Override
     public String toString() {
